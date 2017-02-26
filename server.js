@@ -31,6 +31,8 @@ app.get('/:date', function(req, res) {
 //app.listen(8080, function() {
 //  console.log('example app listening on port 8080')
 //})
-app.listen(3000, function() {
+app.set('port', process.env.PORT || 3000)
+
+app.listen( app.get( 'port' ), function() {
   console.log('example app listening on port 3000')
 })
