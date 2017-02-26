@@ -4,6 +4,13 @@ let express = require('express')
   , strftime = require('strftime')
   ;
 
+app.get('/', function(req, res) {
+  res.send('<h1>This is the Timestamp Microservice</h1>' +
+    "<p>Please append a date, such as 'March 14 1990', or " +
+    "a unix timestamp, such as '637372800', to the URL " +
+    'to use this service.</p>')
+})
+
 app.get('/:date', function(req, res) {
   //let timeStr = req.params.date;
   let date = req.params.date
